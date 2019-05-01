@@ -29,16 +29,24 @@ I have programmed my Digium Asterisk telecommunications server to recognise my o
 
 _Via 433Mhz remote control_
 
-We have a remote control which is used to turn on and off various 433Mhz plug sockets throughout the house.  This rmeote control has 2 unused buttons on it so I have used one as a means to turn on the heating and the other to turn off the heating.  This is achived via my existing SDR system which is constantly listening for 433Mhz wireless transmissions.
+We have a remote control which is used to turn on and off various 433Mhz plug sockets throughout the house.  This remote control has 2 unused buttons on it so I have used one as a means to turn on the heating and the other to turn off the heating.  This is achived via my existing SDR system which is constantly listening for 433Mhz wireless transmissions.
 
 _Via Linux command line interface_
 
-All features can be used from the Linux command line.  In fact it is these commands which are executed by Asterisk and the SDR.  They all act as clients.
+All features can be used from the Linux command line.  In fact it is these commands which are executed by Asterisk and the SDR (via SSH to the server Raspberry Pi 3).  They all act as clients.
 
-To start the server on the lot based Raspberry Pi 3:
+To start the server on the loft based Raspberry Pi 3:
 
-python3.5 thermostat.py server null
+* python3.5 thermostat.py server null
 
-python3.5 thermostat.py client send_temperature lounge
-python3.5 thermostat.py client get_heating_on_off_status cli
-python3.5 thermostat.py client set_target_temperature lounge 21
+To obtain current temperature of lounge:
+
+* python3.5 thermostat.py client send_temperature lounge (sends a float value to the server)
+
+To find out if heating currently on or off:
+
+* python3.5 thermostat.py client get_heating_on_off_status cli (returns a 1 or 0 for on and off respectively)
+
+To set required temperature of lounge (21 degrees c in this case):
+
+* python3.5 thermostat.py client set_target_temperature lounge 21
