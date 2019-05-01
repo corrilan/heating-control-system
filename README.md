@@ -21,11 +21,11 @@ _Via telephone_
 
 I have programmed my Digium Asterisk telecommunications server to recognise my own and my wifes mobile telephone numbers.  When we call the house, we are offered menu of choices.  We can also dial extension 100 from any interal house telephone to reach the same menu:
 
-*Press 1 to check heating status (tells us if heating is currently on or off and tells us the current temperature in the lounge)
-*Press 2 to turn on heating
-*Press 3 to turn off heating
-*Press 4 to set target temperature (we enter a 2 digit temperature in degrees c which is then set as target for the lounge)
-*Press 5 to call house telephone
+* Press 1 to check heating status (tells us if heating is currently on or off and tells us the current temperature in the lounge)
+* Press 2 to turn on heating
+* Press 3 to turn off heating
+* Press 4 to set target temperature (we enter a 2 digit temperature in degrees c which is then set as target for the lounge)
+* Press 5 to call house telephone
 
 _Via 433Mhz remote control_
 
