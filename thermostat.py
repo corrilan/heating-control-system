@@ -98,10 +98,10 @@ def check_target_temperature_reached():
                 if target_temperature_dictionary.get("lounge") != None:
                     if current_temperature_dictionary.get("lounge") < target_temperature_dictionary.get("lounge"):
                         print("Keep heating on as required temperature not yet reached.")
-                        call(["/usr/bin/python3.5", "/home/pi/heating-control/thermostat.py", "client", "on", "auto-on"])
+                        call(["/usr/bin/python3.5", "/home/pi/heating-control-system/thermostat.py", "client", "on", "auto-on"])
                     else:
                         print("Turn heating off as required temperature now reached.")
-                        call(["/usr/bin/python3.5", "/home/pi/heating-control/thermostat.py", "client", "off", "auto-off"])
+                        call(["/usr/bin/python3.5", "/home/pi/heating-control-system/thermostat.py", "client", "off", "auto-off"])
         time.sleep(30)
 
 # Multithreaded Python server : TCP Server Socket Thread Pool
