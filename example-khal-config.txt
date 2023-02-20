@@ -1,0 +1,17 @@
+# Move it to /.config/hkal/config and edit it.
+
+[calendars]
+
+[[heating_calendar_local]]
+path = ~/.calendars/*
+type = discover
+
+[locale]
+timeformat = %H:%M
+dateformat = %d/%m/%Y
+longdateformat = %d/%m/%Y
+datetimeformat = %d/%m/%Y %H:%M
+longdatetimeformat = %d/%m/%Y %H:%M
+
+[default]
+default_calendar = gcwmspya
