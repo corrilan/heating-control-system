@@ -1,0 +1,11 @@
+# Run these commands early in the morning via cron, say at 1pm, to get the latest heating on times with duration.  The 2 dummy items are also required as they will be deleted and replaced automatically via a script.
+#0 1 * * * /home/pi/heating-control-system/retrieve-days-heating-times-from-google-heating-calendar.sh
+#0 1 * *  /home/pi/.local/bin/vdirsyncer sync && /home/pi/heating-control-system/retrieve-on-and-off-times-and-required-temperature-from-synology-nas-heating-calendar.sh
+#0 7 * * * /usr/bin/python3.5 /home/pi/heating-control-system/thermostat.py client on cron
+#0 6 * * * /usr/bin/python3.5 /home/pi/heating-control-system/thermostat.py client on cron
+#30 8 * * * /usr/bin/python3.5 /home/pi/heating-control-system/thermostat.py client off cron
+#00 06 * * * /usr/bin/python3.5 /home/pi/heating-control-system/thermostat.py client set_target_temperature lounge 19
+#00 06 * * * /usr/bin/python3.5 /home/pi/heating-control-system/thermostat.py client on calendar-via-cron
+#30 08 * * * /usr/bin/python3.5 /home/pi/heating-control-system/thermostat.py client off calendar-via-cron
+0 1 * * * /bin/echo DUMMY
+0 1 * * * /bin/echo DUMMY
