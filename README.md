@@ -31,9 +31,13 @@ _Via 433Mhz remote control_
 
 We have a remote control which is used to turn on and off various 433Mhz plug sockets throughout the house.  This remote control has 2 unused buttons on it so I have used one as a means to turn on the heating and the other to turn off the heating.  This is achived via my existing SDR system which is constantly listening for 433Mhz wireless transmissions.
 
+_Via a 'heating' calendar created in Google Calendar or Synology NAS Calendar
+
+Originally I used Google Calendar which harnessed gcalcli (https://github.com/insanum/gcalcli) so I could create an event named as the required temperature, with a start time and end time.  Overtime this became a pain to keep working, what with Google 2FA etc.  I then decided to switch to using the calendar application on my local Synology NAS.  This is much easier to keep working and does not rely on a third party (Google).  I harness both hkal (https://github.com/pimutils/khal) and vdirsyncer (https://github.com/pimutils/vdirsyncer) to to the heavy lifting of retrieving a local copy of the calendar and then extracting the required events from it.  This is all tied together via crontab (see the example crontab,txt file) and a bash script ().
+
 _Via Linux command line interface_
 
-All features can be used from the Linux command line.  In fact it is these commands which are executed by Asterisk and the SDR (via SSH to the server Raspberry Pi 3).  They all act as clients.
+All features can be used from the Linux command line.  In fact it is these commands which are executed by Asterisk and the SDR (via SSH to the server Raspberry Pi 3) and via the Crontab when Google/Synology Calendar is used.  They all act as clients.
 
 To start the server on the loft based Raspberry Pi 3:
 
