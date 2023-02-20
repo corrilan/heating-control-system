@@ -1,7 +1,7 @@
 #!/bin/bash
 
 GCALCLI_PATH="/usr/bin/gcalcli"
-CODE_PATH="/home/pi/heating-control"
+CODE_PATH="/home/pi/heating-control-system"
 
 # Write out current crontab
 crontab -l > $CODE_PATH/original-cron
@@ -61,9 +61,9 @@ while read -r line; do
 	echo On time 24 M $OFF_TIME_24HR_M
 
 	# Echo new cron items into crontab file
-	echo "$ON_TIME_24HR_M $ON_TIME_24HR_H * * * /usr/bin/python3.5 /home/pi/heating-control/thermostat.py client set_target_temperature lounge $REQUIRED_TEMPERATURE" >> $CODE_PATH/new-cron
-	echo "$ON_TIME_24HR_M $ON_TIME_24HR_H * * * /usr/bin/python3.5 /home/pi/heating-control/thermostat.py client on calendar-via-cron" >> $CODE_PATH/new-cron
-	echo "$OFF_TIME_24HR_M $OFF_TIME_24HR_H * * * /usr/bin/python3.5 /home/pi/heating-control/thermostat.py client off calendar-via-cron" >> $CODE_PATH/new-cron
+	echo "$ON_TIME_24HR_M $ON_TIME_24HR_H * * * /usr/bin/python3.5 /home/pi/heating-control-system/thermostat.py client set_target_temperature lounge $REQUIRED_TEMPERATURE" >> $CODE_PATH/new-cron
+	echo "$ON_TIME_24HR_M $ON_TIME_24HR_H * * * /usr/bin/python3.5 /home/pi/heating-control-system/thermostat.py client on calendar-via-cron" >> $CODE_PATH/new-cron
+	echo "$OFF_TIME_24HR_M $OFF_TIME_24HR_H * * * /usr/bin/python3.5 /home/pi/heating-control-system/thermostat.py client off calendar-via-cron" >> $CODE_PATH/new-cron
 done <<< "$RAW"
 
 # Install new crontab file
